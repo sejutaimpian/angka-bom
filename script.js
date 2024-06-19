@@ -42,8 +42,12 @@ document.addEventListener("alpine:init", () => {
         this.min = parseInt(this.tebakan) + 1;
       }
       if (this.min == this.max) {
+        Swal.fire({
+          title: "Seri!",
+          text: "Angka bom:" + this.min + " tidak tertebak sampai akhir",
+          icon: "info",
+        });
         this.resetSemua();
-        Swal.fire("Berakhir");
       } else {
         Swal.fire({
           title: "Selamat!",

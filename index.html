@@ -21,16 +21,16 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
-<body class="antialiased bg-emerald-950 min-h-screen grid place-content-center">
-    <main class="bg-emerald-300 mx-auto rounded-sm" x-data="AngkaBom">
-        <form @submit.prevent="cekTebakan()" class="min-w-80 py-4 px-6">
+<body class="grid min-h-screen antialiased bg-emerald-950 place-content-center">
+    <main class="mx-auto rounded-sm bg-emerald-300" x-data="AngkaBom">
+        <form @submit.prevent="cekTebakan()" class="px-6 py-4 min-w-80">
             <div>
                 <label for="tebakan" x-text="`Tebak dari ${min} sampai ${max}`"></label>
                 <input type="number" name="tebakan" id="tebakan" x-model="tebakan" :min="min" :max="max" required
                     autofocus
                     class="bg-white flex w-full px-3 rounded-lg shadow-sm min-h-[2.25rem] py-0 md:min-h-[2.5rem] border border-gray-300 outline-0 focus:border-emerald-500 focus:ring-emerald-500 dark:focus:border-emerald-500 dark:focus:ring-emerald-500 dark:bg-gray-700 dark:border-gray-600">
             </div>
-            <div class="flex justify-between items-center mt-3">
+            <div class="flex items-center justify-between mt-3">
                 <button type="button" @click="resetSemua()"
                     class="inline-flex  text-emerald-900 items-center justify-center rounded-lg font-medium focus:outline-none px-3 py-1 focus-visible:ring shadow-sm transition-colors duration-75 border border-emerald-900 hover:bg-emerald-900 hover:text-white active:bg-emerald-950 disabled:bg-emerald-700 focus-visible:ring-emerald-900 disabled:cursor-not-allowed;">Ulang</button>
                 <button
