@@ -22,7 +22,7 @@
 </head>
 
 <body class="grid min-h-screen antialiased bg-emerald-950 place-content-center">
-    <main class="mx-auto rounded-sm bg-emerald-300" x-data="AngkaBom">
+    <main class="mx-auto rounded-sm bg-emerald-300" x-data="AngkaBom" @keyup.escape.window='isHint = !isHint'>
         <form @submit.prevent="cekTebakan()" class="px-6 py-4 min-w-80">
             <div>
                 <label for="tebakan" x-text="`Tebak dari ${min} sampai ${max}`"></label>
@@ -33,6 +33,7 @@
             <div class="flex items-center justify-between mt-3">
                 <button type="button" @click="resetSemua()"
                     class="inline-flex  text-emerald-900 items-center justify-center rounded-lg font-medium focus:outline-none px-3 py-1 focus-visible:ring shadow-sm transition-colors duration-75 border border-emerald-900 hover:bg-emerald-900 hover:text-white active:bg-emerald-950 disabled:bg-emerald-700 focus-visible:ring-emerald-900 disabled:cursor-not-allowed;">Ulang</button>
+                <p x-text="bom" x-cloak x-show="isHint" class="text-xl font-extrabold text-red-500 drop-shadow-2xl"></p>
                 <button
                     class="inline-flex bg-emerald-900 text-stone-100 items-center justify-center rounded-lg font-medium focus:outline-none px-3 py-1 focus-visible:ring shadow-sm transition-colors duration-75 border border-emerald-600 hover:bg-emerald-950 hover:text-white active:bg-emerald-700 disabled:bg-emerald-700 focus-visible:ring-emerald-400 disabled:cursor-not-allowed;">Tebak</button>
             </div>

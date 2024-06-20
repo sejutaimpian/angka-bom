@@ -3,7 +3,7 @@ document.addEventListener("alpine:init", () => {
     init() {
       this.resetSemua();
     },
-
+    isHint: false,
     bom: null,
     mulaikah: false,
     min: null,
@@ -30,7 +30,8 @@ document.addEventListener("alpine:init", () => {
     },
     resetSemua() {
       this.resetBom();
-      this.min = 0;
+      this.isHint = false;
+      this.min = 1;
       this.max = 100;
       this.tebakan = null;
       this.mulaikah = false;
